@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!--Flask Flashed Messages-->
+<div class="container">
+    {% with messages = get_flashed_messages(with_categories = true) %}
+        {% if messages %}
+            {% for cat,msg in messages %}
+                {% if cat == 'collection_update' %}
+                    <div class="alert alert-success">
+                        {{ msg }}
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+</div>
+
+<header class="hero-section">
+    <h3 class="header-text">Welcome to Meeple People {{ current_user.username }}!</h3>
+</header>
+
+<div>
+    <a href="{{ url_for('site.upcollectionform') }}">
+        <button type="button">Add Game to Board Game Collection</button>
+    </a>
+</div>
+
+<div>
+    <a href="{{ url_for('site.reupcollectionform') }}">
+        <button type="button">Update Game in Board Game Collection</button>
+    </a>
+</div>
+
+{% endblock content %}

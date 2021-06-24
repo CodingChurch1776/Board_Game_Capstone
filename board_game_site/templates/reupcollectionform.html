@@ -1,0 +1,28 @@
+<!-- HTML Produced By the Flask Form-->
+<H1> This is for updating games in database</H1>
+<form action="/reupcollectionform/{{game_to_update.name}} method="POST">
+    <div class="update-form">
+        <fieldset id="name-field" value="{{game_to_update.name}}">
+            {{ form.name.label }}
+            {{ form.name(placeholder = "Name of Game?") }}
+        </fieldset>
+        <fieldset id="year-field">
+            {{ form.year.label }}
+            {{ form.year(placeholder = "Year Published?") }}
+        </fieldset>
+        <fieldset id="rating-field">
+            {{ form.rating.label }}
+            {{ form.rating(placeholder = "Rating 1-10?") }}
+        </fieldset>
+        <fieldset id="designer-field">
+            {{ form.designer.label }}
+            {{ form.designer(placeholder = "Name of Game Designer?") }}
+        </fieldset>
+        <fieldset id="genre-field">
+            {{ form.genre.label }}
+            {{ form.genre(placeholder = "Genre of Game?") }}
+        </fieldset>
+        <!--Submit button-->
+        {{ form.submit_button(class = "btn btn-primary btn-block") }}
+    </div>
+</form>

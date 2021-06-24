@@ -1,0 +1,72 @@
+/* Nav Styles */
+
+.ct-nav{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Target the main logo image */
+
+.ct-nav img{
+    width: 25%;
+    max-width: 100%;
+    margin-left: 2vw;
+    margin-top: 1vw;
+}
+
+ul#horizontal-list{
+    min-width: 696px;
+    list-style: none;
+    padding-top: 20px;
+}
+
+ul#horizontal-list li, ul#horizontal-list a{
+    display: inline;
+    text-decoration: none;
+    padding: 0.5vw;
+    color: black;
+}
+
+ul#horizontal-list a{
+    border: 2px solid forestgreen;
+    border-radius: 11px;
+    margin-right: 0.2vw;
+}
+
+.ct-nav button{
+    width: 100%;
+    max-width: 100%;
+    margin-right: 3vw;
+    border-width: 2vw;
+    border-color: green;
+}
+/* End of Nav styles */
+
+/* Styles from Home Page */
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%
+  }
+
+.gamer_resource {
+    width: 100%;
+    justify-content: center;
+}
+
+.DT {
+    display: flex;
+}
+
+.BGG {
+    display: flex;
+}
+
+.DT-LOGO {
+   max-block-size: 50%;
+}
+
+.BGG-LOGO {
+    max-block-size: 20%;
+}

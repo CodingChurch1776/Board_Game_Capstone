@@ -1,0 +1,44 @@
+<h1>Your Search Results for {{ search_answer['name'] }}</h1>
+<h1>Your Search Results for {{ search_answer['image_url'] }}</h1>
+<div>
+    <img src="{{ search_answer['image_url'] }}">
+</div>
+
+<table>
+    <div>
+        {{ search_answer['name'] }}
+    </div>
+    <div>
+        {{ search_answer['price'] }}
+    </div>
+    <div>
+        {{ search_answer['min_players'] }}
+    </div>
+    <div>
+        {{ search_answer['max_players'] }}
+    </div>
+    <div>
+        {{ search_answer['description'] }}
+    </div>
+    <div>
+        {{ search_answer['commentary'] }}
+    </div>
+    <div>
+        <img src="{{ search_answer['image_url'] }}">
+    </div>
+    <div>
+        {{ search_answer['publisher'] }}
+    </div>
+    <div>
+        {{ search_answer['rules_url'] }}
+    </div>
+    <div>
+        {{ search_answer['historical_low_prices'] }}
+    </div>
+    <div>
+        {{ search_answer['year_published'] }}
+    </div> 
+</div>
+
+</table> 
+        
