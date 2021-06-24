@@ -1,44 +1,61 @@
-<h1>Your Search Results for {{ search_answer['name'] }}</h1>
-<h1>Your Search Results for {{ search_answer['image_url'] }}</h1>
-<div>
-    <img src="{{ search_answer['image_url'] }}">
-</div>
+{% extends 'base.html' %}
 
-<table>
+{% block content %}
+
+<h1>Your Search Results for {{ search_answer['name'] }}!!!</h1>
+
+<div class = "flex-container1">
     <div>
-        {{ search_answer['name'] }}
+        <img class="answer_img" src="{{ search_answer['image_url'] }}">
     </div>
     <div>
-        {{ search_answer['price'] }}
+        <h1>
+            {{ search_answer['name'] }}
+        </h1>
     </div>
     <div>
-        {{ search_answer['min_players'] }}
+        <h2> 
+            Publisher: {{ search_answer['publisher'] }}
+        </h2>
     </div>
     <div>
-        {{ search_answer['max_players'] }}
+        <h3> 
+            Price: ${{ search_answer['price'] }}
+        </h3>
     </div>
     <div>
-        {{ search_answer['description'] }}
-    </div>
-    <div>
-        {{ search_answer['commentary'] }}
-    </div>
-    <div>
-        <img src="{{ search_answer['image_url'] }}">
-    </div>
-    <div>
-        {{ search_answer['publisher'] }}
-    </div>
-    <div>
-        {{ search_answer['rules_url'] }}
-    </div>
-    <div>
-        {{ search_answer['historical_low_prices'] }}
-    </div>
-    <div>
-        {{ search_answer['year_published'] }}
+        <h4> 
+            Year Published: {{ search_answer['year_published'] }}
+        </h4>
     </div> 
 </div>
+<div class = "flex-container2">
+    <div>
+        <h5> 
+            Decription: {{ search_answer['publisher'] }}
+        </h5>
+    </div>
+</div>
+<div class = "flex-container3">
+    <div>
+        <h4>
+            Minimum Number of Players:  {{ search_answer['min_players'] }}
+        </h4>
+    </div>
+    <div>
+        <h4>
+            Maximum Number of Players:  {{ search_answer['max_players'] }}
+        </h4>
+    </div>
+</div>
+<div class = "flex-container4">
+    <div>
+        <h5>
+            Link for Official Rules: {{ search_answer['rules_url'] }}
+        </h5>
+    </div>
+</div>
 
-</table> 
+{% endblock content %}
+ 
         

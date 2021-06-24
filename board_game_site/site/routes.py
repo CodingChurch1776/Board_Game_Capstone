@@ -46,13 +46,13 @@ def upcollectionform():
             
     return render_template('upcollectionform.html', form = form)
 
-@site.route('/reupcollectionform/<Dixit>', methods = ['GET', 'POST'])
+@site.route('/reupcollectionform/<int:id>', methods = ['GET', 'POST'])
 @login_required
-def reupcollectionform(Dixit):
+def reupcollectionform(id):
     form = UserCollectionUpdateForm()
-    game_to_update = Game.query.get_or_404(Dixit)
+    game_to_update = Game.query.get(id)
     print(game_to_update)
-    if request.method == 'POST':
+    if request.method == "POST":
         game_to_update.name = request.form['name']
         game_to_update.rating = request.form['rating']
         game_to_update.year = request.form['year']
@@ -61,11 +61,13 @@ def reupcollectionform(Dixit):
         try: 
             db.session.commit()
             flash(f'You have successfully updated your collection', 'collection-re-update')
-            return redirect(url_for('site.account'))
+            return render_template('reupcollectionform.html', form = form, game_to_update = game_to_update)
+            #return redirect(url_for('site.account'))
         except: 
             flash(f'Check Your Form Input', 'collection-re-update error')
-            
-    return render_template('reupcollectionform.html', form = form, game_to_update = game_to_update)
+            return render_template('reupcollectionform.html', form = form, game_to_update = game_to_update)
+    else:       
+        return render_template('reupcollectionform.html', form = form, game_to_update = game_to_update)
 
 
 @site.route('/search_form', methods = ['GET', 'POST'])

@@ -70,3 +70,22 @@ ul#horizontal-list a{
 .BGG-LOGO {
     max-block-size: 20%;
 }
+
+.answer_img {
+    object-fit: cover
+}
+
+.flex-container2 {
+    max-width: fit-content;
+}
+
+.flex-container3 {
+    flex-direction: row;
+
+}
+
+.flex-container4 {
+    justify-content: center;
+}
+
+

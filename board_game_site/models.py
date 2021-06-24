@@ -58,22 +58,29 @@ class User(db.Model, UserMixin):
         return '<User {}>'.format(self.username) 
 
 class Game(db.Model):
-    name = db.Column(db.String(150), nullable = False, default = '', primary_key = True)
+    id = db.Column(db.String, primary_key = True)
+    name = db.Column(db.String(150), nullable = False, default = '')
     year = db.Column(db.String(150), nullable = True, default = '')
     rating = db.Column(db.Integer, nullable = True, default = '')
     designer = db.Column(db.String(150), nullable = True, default = '')
     genre = db.Column(db.String(150), nullable = True, default = '')
     
-    def __init__(self, name, year, rating, designer, genre):
-
+    def __init__(self, name, year, rating, designer, genre, id = ''):
+        self.id = self.set_id()
         self.name = name
         self.year = year
         self.rating = rating
         self.designer = designer
         self.genre = genre
 
+    def set_id(self):
+        return str(uuid.uuid4())
+
     def __repr__(self):
         return f'The following board game has been added to your collection: {self.name}'
+
+    def set_id(self):
+        return str(uuid.uuid4())
     
 class GameSchema(ma.Schema):
     class Meta:

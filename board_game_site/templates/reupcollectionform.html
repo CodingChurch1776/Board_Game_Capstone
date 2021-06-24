@@ -1,8 +1,10 @@
 <!-- HTML Produced By the Flask Form-->
 <H1> This is for updating games in database</H1>
-<form action="/reupcollectionform/{{game_to_update.name}} method="POST">
+<form action="/reupcollectionform" method="POST">
+<!--<form action="/reupcollectionform/{{game_to_update.name}} method="POST">-->
     <div class="update-form">
-        <fieldset id="name-field" value="{{game_to_update.name}}">
+        <fieldset id="name-field">
+<!--value="{{game_to_update.name}}">-->
             {{ form.name.label }}
             {{ form.name(placeholder = "Name of Game?") }}
         </fieldset>
